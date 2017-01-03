@@ -21,10 +21,8 @@ In the end, you'll need to have this in your file system:
 
 --- Score
 
----       -¬
+--- Score --- Team 1
 
----         --- Team 1
+--- Score --- Team 2
 
----         --- Team 2
-
-                 ...(Any amount you want, but the folder must exist))                 
+--- Score --- Team ...(Any amount you want, but the folder "team X" must exist)            
