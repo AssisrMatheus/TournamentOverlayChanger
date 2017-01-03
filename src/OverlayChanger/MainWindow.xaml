@@ -1,0 +1,74 @@
+﻿<Window x:Class="OverlayChanger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OverlayChanger"
+        mc:Ignorable="d"
+        Title="Overlay Changer" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <ListBox Grid.Row="0"
+                     Width="150"
+                     ItemsSource="{Binding Teams, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     SelectedItem="{Binding SelectedTeam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            </ListBox>
+
+            <WrapPanel Grid.Row="1" Orientation="Vertical">
+                <!--<WrapPanel Orientation="Horizontal">
+                    <Button Content="Remove team" Margin="0 5 5 5"></Button>
+                    <Button Content="Add team" Margin="0 5 0 5"></Button>
+                </WrapPanel>-->
+                <WrapPanel Orientation="Horizontal">
+                    <Button Content="Insert team" Margin="0 5 5 5" Command="{Binding InsertTeamCommand}"></Button>
+                </WrapPanel>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <WrapPanel Grid.Row="0" Orientation="Horizontal">
+                <Label Content="Teams: "></Label>
+                <Label Content="{Binding TeamsPlaying.Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Label>
+            </WrapPanel>
+
+            <ListBox Grid.Row="1"
+                      ItemsSource="{Binding TeamsPlaying}"
+                      SelectedItem="{Binding SelectedPlayingTeam}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Label Content="{Binding Name}"></Label>
+                            <Label Content="-"></Label>
+                            <Label Content="{Binding Score}"></Label>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <WrapPanel Grid.Row="2" Orientation="Vertical">
+                <WrapPanel Orientation="Horizontal">
+                    <Button Content="Remove team" Margin="0 5 5 5" Command="{Binding RemoveTeamCommand}"></Button>
+                    <Button Content="Add Score" Margin="0 5 5 5" Command="{Binding AddScoreCommand}"></Button>
+                    <Button Content="Subtract Score" Margin="0 5 5 5" Command="{Binding SubtractScoreCommand}"></Button>
+                    <Button Content="Invert" Margin="0 5 5 5" Command="{Binding InvertCommand}"></Button>
+                </WrapPanel>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Window>

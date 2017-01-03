@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/OverlayChanger/bin/Debug
+/src/OverlayChanger/obj/Debug
+/src/.vs/OverlayChanger/v14
