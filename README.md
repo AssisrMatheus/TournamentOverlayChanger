@@ -16,9 +16,15 @@ You also need a score folder in the same place that the .exe is, telling how man
 In the end, you'll need to have this in your file system:
 
 --- overlayChanger.exe
+
 --- Teams
+
 --- Score
+
 ---       -¬
+
 ---         --- Team 1
+
 ---         --- Team 2
+
                  ...(Any amount you want, but the folder must exist))                 
