@@ -76,11 +76,13 @@ namespace OverlayChanger.ViewModel
                 {
                     if (this.TeamsPlaying.Count >= this.ScoreImagesPaths.Count)
                         MessageBox.Show("You can't have more teams than the score folder has images. Adds more score images to the new team first");
-
-                    if (this.TeamsPlaying.Any(team => team == this.SelectedTeam))
-                        MessageBox.Show("The team is already on the playing teams' list");
                     else
-                        this.AddTeam(this.SelectedTeam);
+                    {
+                        if (this.TeamsPlaying.Any(team => team == this.SelectedTeam))
+                            MessageBox.Show("The team is already on the playing teams' list");
+                        else
+                            this.AddTeam(this.SelectedTeam);
+                    }
                 }
             });
 
@@ -135,7 +137,7 @@ namespace OverlayChanger.ViewModel
                 }
             });
 
-            this.rootPath = AppDomain.CurrentDomain.BaseDirectory;
+            this.rootPath = "B:\\Liga 2016\\Overlay";
         }
 
         private string rootPath;
