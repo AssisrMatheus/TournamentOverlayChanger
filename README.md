@@ -8,6 +8,7 @@ I made a tournament stream helper to manage which logos and images should show u
 The app loads every folder inside the folder named "Teams" and puts them in a list. To add any team, you only need to create a new folder with the team's name inside the "Teams" folder You also need a score folder in the same place that the .exe is, with all the team options, and the images for each logo and score count.
 
 Example:
+```
  -overlayChanger.exe
 |
 |__ Teams
@@ -17,3 +18,4 @@ Example:
    |__ Team 1
    |__ Team 2
    |__ Team 3
+```
